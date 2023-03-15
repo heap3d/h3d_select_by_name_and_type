@@ -10,10 +10,11 @@
 import modo
 import lx
 import sys
-from select_items import select_items
 
 sys.path.append('{}\\scripts'.format(lx.eval('query platformservice alias ? {kit_h3d_utilites:}')))
 import h3d_utils as h3du
+sys.path.append('{}\\scripts'.format(lx.eval('query platformservice alias ? {kit_h3d_select_by_name_and_type:}')))
+from select_items import select_items
 
 
 USERVAL_NAME_SEARCH_TYPE = 'h3d_sbnt_search_type'
@@ -30,8 +31,8 @@ def main():
 
     if not lx.args():
         items = modo.Scene().items(itype=SEARCH_TYPE)
-    elif lx.args()[0] == 'selection':
-        items = modo.Scene().selected()
+    elif lx.args()[0] == 'selected':
+        items = modo.Scene().selected
     else:
         items = modo.Scene().items(itype=SEARCH_TYPE)
 
