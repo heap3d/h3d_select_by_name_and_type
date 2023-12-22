@@ -9,12 +9,9 @@
 
 import modo
 import lx
-import sys
 
-sys.path.append('{}\\scripts'.format(lx.eval('query platformservice alias ? {kit_h3d_utilites:}')))
-import h3d_utils as h3du
-sys.path.append('{}\\scripts'.format(lx.eval('query platformservice alias ? {kit_h3d_select_by_name_and_type:}')))
-from select_items import select_items
+import h3d_utilites.scripts.h3d_utils as h3du
+from h3d_select_by_name_and_type.scripts.select_items import select_items
 
 
 USERVAL_NAME_SEARCH_TYPE = 'h3d_sbnt_search_type'
